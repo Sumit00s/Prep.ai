@@ -266,7 +266,7 @@
   }
 
   .card-cta {
-    @apply flex flex-row blue-gradient-dark rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
+    @apply flex flex-row dark-gradient rounded-3xl px-16 py-6 items-center border-1 justify-between max-sm:px-4;
   }
 
   .interviews-section {
@@ -295,7 +295,7 @@
 }
 
 @utility dark-gradient {
-  @apply bg-gradient-to-b from-[#1A1C20] to-[#08090D];
+  @apply bg-gradient-to-b from-[#030811] to-[#08090D];
 }
 
 @utility border-gradient {
