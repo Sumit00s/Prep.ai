@@ -111,3 +111,7 @@ export async function isAuthenticated() {
     const user = await getCurrentUser();
     return !!user;
 }
+
+export async function getInterviewByUSerID(params:type) {
+    
+}
