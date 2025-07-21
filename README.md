@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Prep.ai 💼
+AI-Powered Mock Interview Platform
 
-## Getting Started
+Prep.ai is an AI-driven mock interview assistant that helps users prepare for real-world technical interviews. Simply input your role, tech stack, and number of questions—Prep.ai will generate tailored questions and conduct a simulated interview using conversational AI. Ideal for developers, job seekers, and students looking to improve their interview performance with personalized practice.
 
-First, run the development server:
+🚀 Features
+🎯 Generate role-specific technical interview questions
+🤖 Conduct mock interviews with an AI interviewer
+⚙️ Customize interviews based on tech stack & preferences
+🧠 Real-time feedback and question handling
+🎨 Beautiful UI with Tailwind CSS and shadcn/ui components
+🔐 Firebase Authentication for secure login
+📈 Scalable backend powered by Vapi for AI agent conversations
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🛠 Tech Stack
+Technology	Description
+Next.js	Full-stack React framework
+Firebase	Auth, Firestore (database), and storage backend
+Tailwind CSS	Utility-first CSS framework
+shadcn/ui	Accessible, customizable UI components
+Vapi	AI voice agent for realistic mock interviews
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📦 Getting Started
+1. Clone the repository
+bash
+Copy
+Edit
+git clone https://github.com/YOUR_USERNAME/prep-ai.git
+cd prep-ai
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+3. Set up environment variables
+Create a .env.local file in the root directory and add the following:
 
-To learn more about Next.js, take a look at the following resources:
+env
+Copy
+Edit
+# 🔐 Firebase Admin SDK
+FIREBASE_PROJECT_ID=
+FIREBASE_PRIVATE_KEY=
+FIREBASE_CLIENT_EMAIL=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 🔑 Google Generative AI API
+GOOGLE_GEN_AI_API_KEY=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🎙️ Vapi Configuration
+VAPI_WEB_AI_API_KEY=
+VAPI_WORKFLOW_ID=
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 🌐 Other (if needed)
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
