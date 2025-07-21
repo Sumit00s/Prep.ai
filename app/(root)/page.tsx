@@ -3,8 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { dummyInterviews } from "@/constants/constants";
 import InterviewCard from "../_components/InterviewCard";
+import { getCurrentUser, getInterviewsByUserId } from "@/lib/actions/auth.action";
+import { Inter } from "next/font/google";
 
-export default function HomePage() {
+export default async function HomePage() {
+
+  const user = await getCurrentUser();
+  const userInterviews = await getInterviewsByUserId(user?.id);
+
+  const hasPastInterviews = userInterviews?.length > 0;
   return (
     <>
       <section className="card-cta flex max-sm:flex-col-reverse">
@@ -21,10 +28,13 @@ export default function HomePage() {
       <section className="flex flex-col gap-6 mt-8">
           <h2>Your Interviews</h2>
           <div className="interviews-section">
-            {dummyInterviews.map((interview)=>(
-              <InterviewCard {...interview} key={interview.id}/>
-            ))}
-            {/* <p>You haven&apos;t taken any interview yet</p> */}
+            {
+              hasPastInterviews ? (
+                userInterviews?.map((interview)=>(
+                  <InterviewCard {...interview} key={interview.id}/>
+                ))
+              ):(<p>You haven&apos;t taken any interview yet</p>)
+            }
           </div>
       </section>
 
