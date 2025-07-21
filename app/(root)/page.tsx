@@ -9,9 +9,13 @@ import {getInterviewsByUserId,getLatestInterviews} from '@/lib/actions/general.a
 export default async function HomePage() {
 
   const user = await getCurrentUser();
-  const userInterviews = await getInterviewsByUserId(user?.id);
+  const [userInterviews, allInterview] = await Promise.all([
+    getInterviewsByUserId(user?.id!),
+    getLatestInterviews({ userId: user?.id! }),
+  ]);
 
-  const hasPastInterviews = userInterviews?.length > 0;
+  const hasPastInterviews = userInterviews?.length! > 0;
+  const hasUpcomingInterviews = allInterview?.length! > 0;
   return (
     <>
       <section className="card-cta flex max-sm:flex-col-reverse">
@@ -41,10 +45,21 @@ export default async function HomePage() {
       <section className="flex flex-col gap-6 mt-8">
         <h2>Take an Interview</h2>
         <div className="interviews-section">
-          {/* {dummyInterviews.map((interview)=>(
-            <InterviewCard {...interview} key={interview.id}/>
-          ))} */}
-          {/* <p>You haven&apos;t taken any interview yet</p> */}
+          {hasUpcomingInterviews ? (
+            allInterview?.map((interview) => (
+              <InterviewCard
+                key={interview.id}
+                userId={user?.id}
+                interviewId={interview.id}
+                role={interview.role}
+                type={interview.type}
+                techstack={interview.techstack}
+                createdAt={interview.createdAt}
+              />
+            ))
+          ) : (
+            <p>There are no interviews available</p>
+          )}
         </div>
       </section>
     </>
