@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { dummyInterviews } from "@/constants/constants";
 import InterviewCard from "../_components/InterviewCard";
-import { getCurrentUser, getInterviewsByUserId } from "@/lib/actions/auth.action";
-import { Inter } from "next/font/google";
+import { getCurrentUser} from "@/lib/actions/auth.action";
+import {getInterviewsByUserId,getLatestInterviews} from '@/lib/actions/general.action'
+
 
 export default async function HomePage() {
 
@@ -41,9 +41,9 @@ export default async function HomePage() {
       <section className="flex flex-col gap-6 mt-8">
         <h2>Take an Interview</h2>
         <div className="interviews-section">
-          {dummyInterviews.map((interview)=>(
+          {/* {dummyInterviews.map((interview)=>(
             <InterviewCard {...interview} key={interview.id}/>
-          ))}
+          ))} */}
           {/* <p>You haven&apos;t taken any interview yet</p> */}
         </div>
       </section>
