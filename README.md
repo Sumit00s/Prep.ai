@@ -1,26 +1,36 @@
-Prep.ai 💼
-AI-Powered Mock Interview Platform
+Prep.ai 🎯
+AI-Powered Mock Interview Assistant
 
-Prep.ai is an AI-driven mock interview assistant that helps users prepare for real-world technical interviews. Simply input your role, tech stack, and number of questions—Prep.ai will generate tailored questions and conduct a simulated interview using conversational AI. Ideal for developers, job seekers, and students looking to improve their interview performance with personalized practice.
+Prep.ai is a full-stack AI interview assistant that helps users practice real-world interviews tailored to their desired role and tech stack. By inputting key details like the role, technologies, and number of questions, users can simulate personalized mock interviews powered by conversational AI.
+
+Ideal for developers, students, and job seekers who want to build confidence and improve their technical interview skills.
 
 🚀 Features
-🎯 Generate role-specific technical interview questions
-🤖 Conduct mock interviews with an AI interviewer
-⚙️ Customize interviews based on tech stack & preferences
-🧠 Real-time feedback and question handling
-🎨 Beautiful UI with Tailwind CSS and shadcn/ui components
-🔐 Firebase Authentication for secure login
-📈 Scalable backend powered by Vapi for AI agent conversations
+Generate interview questions based on role and stack
+
+Conduct mock interviews with an AI interviewer
+
+Customize difficulty and question count
+
+Conversational interface for real-time practice
+
+Secure authentication via Firebase
+
+Smooth and accessible UI with shadcn/ui and Tailwind CSS
+
+Voice-based interaction powered by Vapi workflows
 
 🛠 Tech Stack
-Technology	Description
-Next.js	Full-stack React framework
-Firebase	Auth, Firestore (database), and storage backend
-Tailwind CSS	Utility-first CSS framework
-shadcn/ui	Accessible, customizable UI components
-Vapi	AI voice agent for realistic mock interviews
+Next.js – Full-stack React framework
+Tailwind CSS – Utility-first CSS for styling
+shadcn/ui – Reusable UI components for Next.js
+Firebase – Auth, database, and backend infrastructure
+Vapi – Workflow engine for AI-based mock interviews
+Google Generative AI – For dynamic question generation and evaluation
 
 📦 Getting Started
+To run Prep.ai locally, follow these steps:
+
 1. Clone the repository
 bash
 Copy
@@ -28,30 +38,23 @@ Edit
 git clone https://github.com/YOUR_USERNAME/prep-ai.git
 cd prep-ai
 
-2. Install dependencies
+3. Install dependencies
 bash
 Copy
 Edit
 npm install
 
-
-3. Set up environment variables
+3. Configure environment variables
 Create a .env.local file in the root directory and add the following:
-
-env
-Copy
-Edit
-# 🔐 Firebase Admin SDK
 FIREBASE_PROJECT_ID=
 FIREBASE_PRIVATE_KEY=
 FIREBASE_CLIENT_EMAIL=
 
-# 🔑 Google Generative AI API
 GOOGLE_GEN_AI_API_KEY=
 
-# 🎙️ Vapi Configuration
 VAPI_WEB_AI_API_KEY=
 VAPI_WORKFLOW_ID=
 
-# 🌐 Other (if needed)
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+4. Start the development server
+npm run dev
